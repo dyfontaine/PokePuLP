@@ -952,7 +952,7 @@ def show_obj_status(opt_res, btn_add_ncts, btn_rem_ncts, btn_solve_ncts, btn_obj
      [State('dt_constraints', 'selected_row_indices'),
       State('txtbox_const_rhs', 'value')])
 def show_obj_status(opt_res, btn_add_ncts, btn_rem_ncts, btn_solve_ncts, btn_obj_ncts, selected_rows, my_rhs):
-    msg = 'Welcome to PokePulp! Set up your optimization problem and then click SOLVE!'
+    msg = 'Welcome to PokePuLP! Set up your optimization problem and then click SOLVE!'
     if btn_solve_ncts is None:
         btn_solve_ncts = 0
     if btn_add_ncts is None:
