@@ -224,7 +224,7 @@ server = app.server
 
 app.layout = html.Div(id = 'full_page', children=[
     html.Table(children=[
-        html.Tr(children=[html.Td(children=[html.H1(children='PokePULP', className='page_Title')], colSpan='6')]),
+        html.Tr(children=[html.Td(children=[html.H1(children='PokePuLP', className='page_Title')], colSpan='6')]),
     
         # objective section
         html.Tr(children=[
@@ -342,7 +342,7 @@ app.layout = html.Div(id = 'full_page', children=[
                         html.Td(id='message', children='Message:', style={'width': '400px'}, colSpan='2')]),     
                     html.Tr(children=[
                         html.Td(children=[html.Div(id='div_obj_status', children='obj status........')]),
-                        html.Td(children=[html.Div(id='div_message', children='Welcome to PokePulp! Set up your optimization problem and then click SOLVE!')], colSpan='2')])], style={'height': '70px'})],
+                        html.Td(children=[html.Div(id='div_message', children='Welcome to PokePuLP! Set up your optimization problem and then click SOLVE!')], colSpan='2')])], style={'height': '70px'})],
                 colSpan='4', style={'width': '800px'}),
             html.Td(colSpan='3')])]),
     
