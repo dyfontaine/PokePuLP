@@ -6,11 +6,9 @@ from dash_table_experiments import DataTable
 import plotly.graph_objs as go
  
 import pandas as pd
-#import numpy as np
 from itertools import compress
 
 import pulp as plp
-#import sys
 from io import StringIO
 
 
@@ -18,8 +16,7 @@ from io import StringIO
 # prepare data
 ##########################################
 
-#data_pokes = pd.read_csv('C:/Users/Dylan/Desktop/pokepulp_project/pokeSTATS.csv')
-# (read data from this string for easy deployment))
+# read data from this string for easy deployment
 rawdata = StringIO("""Number,Pokemon,Type 1,Type 2,HP,ATTACK,DEFENSE,SPEED,SPECIAL,GIF,PNG,Description
 1,Bulbasaur,Grass,Poison,45,49,49,45,65,https://play.pokemonshowdown.com/sprites/bwani/bulbasaur.gif,https://play.pokemonshowdown.com/sprites/bw/bulbasaur.png,A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokemon.
 2,Ivysaur,Grass,Poison,60,62,63,60,80,https://play.pokemonshowdown.com/sprites/bwani/ivysaur.gif,https://play.pokemonshowdown.com/sprites/bw/ivysaur.png,"Often seen swimming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa."
@@ -221,13 +218,9 @@ x_vars  = {p: plp.LpVariable(cat=plp.LpInteger, lowBound=0, upBound=1, name="x_{
 # constants
 url_pokeball = 'https://lh6.googleusercontent.com/-7ze4Lb2iiOI/UptLoxXERxI/AAAAAAAAAEM/T0RV2S4bAgs/s145-p/pokeball-sprite-150-150.png'
 
-app = dash.Dash(__name__, static_folder='assets')
-server = app.server#################
-#app.config['suppress_callback_exceptions'] = False############
-#app.css.config.serve_locally = True
-#app.scripts.config.serve_locally = True
 
-    
+app = dash.Dash(__name__, static_folder='assets')
+server = app.server
 
 app.layout = html.Div(id = 'full_page', children=[
     html.Table(children=[
@@ -432,9 +425,6 @@ def add_constraint(btn_add_ncts, btn_rem_ncts, const_df, my_lhs, my_sign, my_rhs
         btn_rem_ncts = 0 
     # check which button was clicked most recently (based on time stamp)
     if int(btn_add_ncts) > int(btn_rem_ncts): 
-        print('XXXXXXXXX')
-        print(my_rhs)
-        print(type(my_rhs))
         if btn_add_ncts is not None and good_rhs(my_rhs):
             new_const_df = pd.DataFrame(columns=['LEFT HAND SIDE', 'SIGN', 'RIGHT HAND SIDE'], data=[[my_lhs, my_sign, my_rhs]], index=['g'])
             const_df = const_df.append(new_const_df, ignore_index=False)
@@ -1044,7 +1034,6 @@ def good_rhs(val):
 
 
 if __name__ == '__main__':
-    #app.run_server(debug=False, port=81)
     app.run_server(debug=False)
 
     
