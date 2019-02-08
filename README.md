@@ -4,8 +4,9 @@ A project I worked on in my free time to try out Plotly Dash and the PuLP packag
 
 This app allows the user to optimize their Pokemon team using a linear programming model. 
 
-Link to try app: XXXXXXXXXXXXXXXXXXXXXXX
+Link to try app: https://pokepulp.herokuapp.com
 
+Info about Plotly Dash and PuLP:
 https://plot.ly/products/dash/
 https://www.coin-or.org/PuLP/
 
